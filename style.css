@@ -18,6 +18,9 @@
     font-weight: 800;
     src: url('./public/font/nunito-sans-v15-latin-800.woff2') format('woff2');
 }
+::-webkit-scrollbar {
+    width: 0px;
+}
     body,
     #header {
         transition: background-color 0.5s, color 0.5s;
@@ -25,6 +28,29 @@
         input[type="text"] {
             transition: background-color 0.5s, color 0.5s;
         }
+        #cars{
+            transition: background-color 0.5s, color 0.5s;
+        }
 header .container .left{
     font-family: 'Nunito Sans-800';
+}
+#cars{
+    font-family: 'Nunito Sans-600';
+}
+
+.card{
+    transition: background-color 0.5s, color 0.5s;
+    width: 264px;
+border:none;
+background-color:#2B3844;
+color: #FFFFFF;
+padding: 24px 24px  46px 24px;
+border-radius: 8px;
+}
+
+.card_parrent{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 74px;
 }

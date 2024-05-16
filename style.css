@@ -18,7 +18,13 @@
     font-weight: 800;
     src: url('./public/font/nunito-sans-v15-latin-800.woff2') format('woff2');
 }
-
+    body,
+    #header {
+        transition: background-color 0.5s, color 0.5s;
+    }
+        input[type="text"] {
+            transition: background-color 0.5s, color 0.5s;
+        }
 header .container .left{
     font-family: 'Nunito Sans-800';
 }

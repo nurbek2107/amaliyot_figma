@@ -10,12 +10,15 @@ fetch("https://restcountries.com/v3.1/all")
     .then(countries => updation(countries));
 
 function updation(countries) {
+
+
     const countryList = document.getElementById("cards");
     countries.forEach(element => {
         const listItem = document.createElement("div");
         listItem.classList.add("card");
         const currency = element.currencies ? element.currencies[Object.keys(element.currencies)[0]].name : "N/A";
         listItem.innerHTML = `
+            <img src="${element.flags.png}"></img>
             <h2>${element.name.common}</h2>
             <p><strong>Capital:</strong> ${element.capital}</p>
             <p><strong>Area:</strong> ${element.area} square kilometers</p>
@@ -28,6 +31,7 @@ function updation(countries) {
         listItem.style.background = isPlaying ? "#2B3844" : "#fff";
         listItem.style.color = isPlaying ? "#fff" : "#000";
     });
+    console.log(countries);
 }
 
 function toggleDarkMode() {
@@ -58,7 +62,7 @@ function toggleDarkMode() {
         item.style.color = isPlaying ? "#fff" : "#000";
     });
 
-    localStorage.setItem('isPlaying', isPlaying);
+    localStorage.setItem('isPlaying', !isPlaying);
 }
 
 darkEL.addEventListener('click', toggleDarkMode);

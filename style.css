@@ -39,13 +39,31 @@ header .container .left{
 }
 
 .card{
+
     transition: background-color 0.5s, color 0.5s;
     width: 264px;
 border:none;
 background-color:#2B3844;
 color: #FFFFFF;
-padding: 24px 24px  46px 24px;
+box-shadow: 0px 0px 33px 4px rgba(34, 60, 80, 0.2);
 border-radius: 8px;
+    img {
+            border-radius: 8px 8px 0px 0px;
+            width: 303.86px;
+            height: 160px;
+        }
+        h2{
+        padding-left: 24px;
+        padding-top: 24px;
+            padding-bottom: 10px;
+        }
+        p{
+            padding-bottom: 5px;
+        padding-left: 24px;
+        }
+}
+.card p:nth-child(6){
+        padding-bottom: 46px;
 }
 
 .card_parrent{

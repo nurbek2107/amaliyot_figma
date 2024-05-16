@@ -4,14 +4,12 @@ const header = document.getElementById('header');
 const price = document.getElementById('price');
 let isPlaying = localStorage.getItem('isPlaying') === 'true';
 const cars = document.getElementById('cars');
-
+// malumot 
 fetch("https://restcountries.com/v3.1/all")
     .then(response => response.json())
     .then(countries => updation(countries));
 
 function updation(countries) {
-
-
     const countryList = document.getElementById("cards");
     countries.forEach(element => {
         const listItem = document.createElement("div");
@@ -27,13 +25,47 @@ function updation(countries) {
         `;
         countryList.appendChild(listItem);
 
-        // Change background color and text color of listItem
         listItem.style.background = isPlaying ? "#2B3844" : "#fff";
         listItem.style.color = isPlaying ? "#fff" : "#000";
     });
-    console.log(countries);
+
 }
 
+    // region
+document.getElementById("cars").addEventListener("change", function () {
+    const selectedRegion = this.value.toLowerCase();
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+        const region = card.querySelector('p:nth-child(5)').innerText.toLowerCase();
+        if (selectedRegion === 'filter by region' || region === selectedRegion) {
+            card.style.display = "block";
+        } else if (selectedRegion === 'africa' && region === 'Africa') {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// darktheme
 function toggleDarkMode() {
     isPlaying = !isPlaying;
     if (isPlaying) {
@@ -55,7 +87,6 @@ function toggleDarkMode() {
         price.style.color = '#000';
         darkEL.innerHTML = '<i class="fa-regular fa-moon"></i>Dark Mode';
     }
-    // Update background color and text color of all list items
     const listItems = document.querySelectorAll('.card');
     listItems.forEach(item => {
         item.style.background = isPlaying ? "#2B3844" : "#fff";
@@ -65,6 +96,28 @@ function toggleDarkMode() {
     localStorage.setItem('isPlaying', !isPlaying);
 }
 
+
 darkEL.addEventListener('click', toggleDarkMode);
 
 toggleDarkMode();
+// qidiruv
+function searchByCountryName() {
+    const price = document.getElementById('price'); 
+    const filter = price.value.toUpperCase();
+    const countryList = document.getElementById("cards");
+    const cards = countryList.getElementsByClassName('card');
+
+    for (let i = 0; i < cards.length; i++) {
+        const h2 = cards[i].getElementsByTagName("h2")[0];
+        const txtValue = h2.textContent || h2.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            cards[i].style.display = "";
+        } else {
+            cards[i].style.display = "none";
+        }
+    }
+}
+
+
+
+

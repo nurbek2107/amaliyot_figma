@@ -13,47 +13,46 @@
 <body class="bg-slate-100">
         <header id="header" class="flex pt-5  bg-white shadow-lg shadow">
             <div class="container m-auto flex justify-between items-baseline h-14 ">
-            <div class="left size-24 w-40 ">Where in the world?</div>
-            <div id="dark" class="right flex gap-2 items-center cursor-pointer"><i id="dark_w" class="fa-regular fa-moon"></i>Dark Mode</div>
+                <div class="left size-24 w-40 text-black">Where in the world?</div>
+                <div id="dark" class="right flex gap-2 items-center cursor-pointer text-black">
+                    <i class="fa-regular fa-moon"></i>Dark Mode
+                </div>
             </div>
         </header>
-<main class="mt-20">
-    <div class="container  m-auto ">
-    <div class="top flex justify-between items-baseline flex-wrap text-center">
-        <div class="left">
-            <div class="drop-shadow-md">
-                    <div class="relative mt-2 rounded-md shadow-sm">
-                        <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                        <i class="fa-solid fa-magnifying-glass text-gray-500 sm:text-sm "></i>
+        <main class="mt-20">
+            <div class="container m-auto">
+                <div class="top flex justify-between items-baseline flex-wrap text-center">
+                    <div class="left">
+                        <div class="drop-shadow-md">
+                            <div class="relative mt-2 rounded-md shadow-sm">
+                                <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                                    <i class="fa-solid fa-magnifying-glass text-gray-500 sm:text-sm "></i>
+                                </div>
+                                <input type="text" id="price" onkeyup="searchByCountryName()" autocomplete="off"
+                                    class="block w-96 rounded-md border-none pl-12 p-4 cursor-pointer text-gray-900 ring-gray-300 placeholder:text-gray-400 focus:outline-none"
+                                    placeholder="Search for a country…">
+                            </div>
                         </div>
-                        <input type="text" id="price" onkeyup="searchByCountryName()" autocomplete="off"
-                            class="block w-96 rounded-md border-none pl-12 p-4 cursor-pointer text-gray-900  ring-gray-300 placeholder:text-gray-400   focus:outline-none "
-                            placeholder="Search for a country…"  >
                     </div>
+                    <div class="right">
+                        <form action="">
+                            <select name="cars" id="cars"
+                                class="block w-60 rounded-md select-auto border-none shadow p-4 cursor-pointer text-gray-900 ring-gray-300 placeholder:text-gray-400 focus:outline-none">
+                                <option>Filter by Region</option>
+                                <option>Africa</option>
+                                <option>America</option>
+                                <option>Asia</option>
+                                <option>Europe</option>
+                                <option>Oceania</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+                <div class="bottom mt-20">
+                    <div class="card_parrent" id="cards"></div>
+                </div>
             </div>
-        </div>
-        <div class="right">
-<form action="">
-    <select name="cars" id="cars"
-        class="block w-60 rounded-md select-auto border-none shadow p-4 cursor-pointer text-gray-900  ring-gray-300 placeholder:text-gray-400 focus:outline-none">
-        <option>Filter by Region</option>
-        <option>Africa</option>
-        <option>America</option>
-        <option>Asia</option>
-        <option>Europe</option>
-        <option>Oceania</option>
-    </select>
-</form>
-
-        </div>
-    </div>
-    <div class="bottom mt-20">
-        <div class="card_parrent " id="cards">  
-        </div>
-    </div>
-    </div>
-</main>
-
-    <script src="main.js"></script>
+        </main>
+        <script src="main.js"></script>
 </body>
 </html>

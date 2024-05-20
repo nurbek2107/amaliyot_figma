@@ -24,9 +24,12 @@ function updation(countries) {
             <p><strong>Currency:</strong> ${currency}</p>
         `;
         countryList.appendChild(listItem);
-
         listItem.style.background = isPlaying ? "#2B3844" : "#fff";
         listItem.style.color = isPlaying ? "#fff" : "#000";
+        listItem.addEventListener("click", () => {
+            window.location.href = "./abaut.html";
+        });
+        countryList.appendChild(listItem);
     });
 
 }
@@ -47,18 +50,6 @@ document.getElementById("cars").addEventListener("change", function () {
         }
     });
 });
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
